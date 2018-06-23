@@ -23,38 +23,38 @@ int main()
 		cin >> Solution;
 		do
 		{
-			if (Solution == "Hit")//Выдача карт игрока
+			if (Solution == "Hit")//Г‚Г»Г¤Г Г·Г  ГЄГ Г°ГІ ГЁГЈГ°Г®ГЄГ 
 			{
 				int Card = rand() % 10 + 1;
 				cout << (Point += Card) << endl;
 				getline(cin, Solution);
 			}
-			else if (Solution == "Pass" || Point == 21)//Переход к сравнению карт с дилером 
+			else if (Solution == "Pass" || Point == 21)//ГЏГҐГ°ГҐГµГ®Г¤ ГЄ Г±Г°Г ГўГ­ГҐГ­ГЁГѕ ГЄГ Г°ГІ Г± Г¤ГЁГ«ГҐГ°Г®Г¬ 
 			{
 				cout << "Your score is " << Point << endl;
 				do
 				{
 					int Card = rand() % 10 + 1;
-					cout << "Dealer's card " << (Dealer += Card) << endl; //Выдача карт дилера
+					cout << "Dealer's card " << (Dealer += Card) << endl; //Г‚Г»Г¤Г Г·Г  ГЄГ Г°ГІ Г¤ГЁГ«ГҐГ°Г 
 				} while (Dealer < 17);
-				if (Dealer < Point && Point < 22) {//Условие победы
+				if (Dealer < Point && Point < 22) {//Г“Г±Г«Г®ГўГЁГҐ ГЇГ®ГЎГҐГ¤Г»
 					int Total = Money + Bet * 1.5;
 					cout << "You win!" << endl;
 					cout << "Your Cash is " << Total << endl;
 				}
-				else if (Dealer > Point && Dealer <= 21)//Условие проигрыша
+				else if (Dealer > Point && Dealer <= 21)//Г“Г±Г«Г®ГўГЁГҐ ГЇГ°Г®ГЁГЈГ°Г»ГёГ 
 				{
 					int Total = Money - Bet;
 					cout << "You lose!" << endl;
 					cout << "Your Cash is " << Total << endl;
 				}
-				else if (Dealer = Point) {// Ничья
+				else if (Dealer == Point) {// ГЌГЁГ·ГјГї
 					cout << "Smooth!" << endl;
 					cout << "Your Cash is " << Money << endl;
 				}
 				break;
 			}
-			if (Point > 21) {//Перебор
+			if (Point > 21) {//ГЏГҐГ°ГҐГЎГ®Г°
 				cout << "You lose!" << endl;
 				cout << "Your Cash is " << (Money -= Bet) << endl;
 			}
